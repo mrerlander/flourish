@@ -1,14 +1,34 @@
 import React from 'react';
-import {Row, Input} from 'react-materialize';
+import {Row, Input, Button} from 'react-materialize';
 
-const Form = () => (
+const Form = props => (
+
 <Row>
-    <Input placeholder="Placeholder" s={6} label="First Name" />
-    <Input s={6} label="Last Name" />
-    <Input s={12} label="disabled" defaultValue="I am not editable" disabled />
-    <Input type="password" label="password" s={12} />
-    <Input type="email" label="Email" s={12} />
+    <form>
+        <Input 
+            placeholder="$"
+            s={12}
+            label="Fixed Monthly Expenses"
+        />
+        <Input 
+            placeholder="$"
+            s={12} 
+            label="Avg Monthly Variable Expenses"
+        />
+        <Input 
+            placeholder="$"
+            s={12}
+            label="Avg Monthly Total Revenue"
+        />
+        <Button
+            type="submit"
+            waves="light"
+        >
+        Submit
+        </Button>
+    </form>
 </Row>
+
 );
 
 export default Form;

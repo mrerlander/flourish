@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Demo from './pages/demo';
 import './App.css';
-import Header from './component/header';
-import Foot from './component/footer';
-import Form from './component/form';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Form />        
-        <Foot />
-      </div>
-    );
-  }
-}
+const App = () => (
+    <Router>
+      <Route
+        exact path='/demo'
+        component={Demo}
+      />
+    </Router>
+);
 
 export default App;
