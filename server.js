@@ -52,10 +52,28 @@ app.post('/emailinsert', function(req, res){
 	});
 });
 
-//Test 
-// app.get('/emailinsert', function(req, res) {
-//     res.send('hi');
-// })
+//Route to post user emails
+app.post('/savedemails', function (req, res) {
+    console.log(req.body);
+    db.users.insert(req.body, function (error, savedEmail) {
+        // Log any errors
+        if (error) {
+            res.send(error);
+        } else {
+            res.json(savedEmail);
+        }
+    });
+});
+
+//Route to get all saved emails
+
+app.get('/savedemails', function (req, res) {
+    // res.send('hi');
+    db.users.find({
+    }, function (error, result) {
+        res.json(result);
+    });
+});
 
 // Listen on port 3001
   app.listen(PORT, function() {
