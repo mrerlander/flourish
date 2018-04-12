@@ -1,0 +1,26 @@
+{
+  "name": "flourish",
+  "version": "1.0.0",
+  "description": "Application to help small businesses plan and save for the future.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrerlander/untitled-small-business.git"
+  },
+  "author": "Michael Erlander, Peter Gustafson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrerlander/untitled-small-business/issues"
+  },
+  "homepage": "https://github.com/mrerlander/untitled-small-business#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongojs": "^2.5.0",
+    "morgan": "^1.9.0"
+  }
+}
