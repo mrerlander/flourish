@@ -43,6 +43,7 @@ class Landing extends Component {
             <div>
             <Header />
             <EmailInputForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
+            <img src="https://images.pexels.com/photos/908292/pexels-photo-908292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="main" height="100%" width="100%"></img>
             <Footer />
             </div>
         )
