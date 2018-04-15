@@ -12,7 +12,7 @@ const Form = props => (
         s={12}
         l={6}
     >
-        <form>
+        <form id="main-form">
             <Input
                 onChange={props.handleInputChange} 
                 name="revenue"
