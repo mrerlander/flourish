@@ -5,19 +5,19 @@
 }
 
 #landingHeader {
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 44%;
 }
 
 #headerValueStatement {
-    position: fixed;
+    position: absolute;
     top: 17%;
-    left: 10%;
+    left: 4%;
 }
 
 #landingLogo {
-    position: fixed;
+    position: absolute;
     top: 8%;
     left: 48%;
     opacity: 0.5;
