@@ -57,7 +57,9 @@ class About extends Component {
                 is currently President and CEO of Flourish. Previously Peter was Customer Success Operations Manager at Trading Technolgies where 
                 he led the effort to help sell-side clients migrate over to TT's new cloud based platform.
                 Before joining Trading Technologies, Peter spent three years in Seattle working at 2 early-stage SAAS startups in various Sales, Account Management and Operations leadership roles.
-                Peter earned his BA in Global Affairs and Economics from George Mason University and most recently completed a Full-Stack Web Development bootcamp at Northwestern University. </p>
+                Peter earned his BA in Global Affairs and Economics from George Mason University and most recently completed a Full-Stack Web Development bootcamp at Northwestern University.</p>
+                <h4>Our Investors</h4>
+                <img src="https://i.redd.it/95b3rev8ao501.png" alt="human fund" id="human-fund" height="5%" width="20%"></img>
             </div>
             <Footer />
             </div>
