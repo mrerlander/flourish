@@ -1,15 +1,15 @@
 import React from 'react';
 import {VictoryPie} from 'victory';
-import {Row, Col} from 'react-materialize';
+import {Col} from 'react-materialize';
 
 const PieChart = props => (
-    <Row>
         <Col 
-            s={4}
-            offset='s4'
+            s={10}
+            l={4}
+            offset='s1 l1'
         >
             <VictoryPie
-                padding={{top: 0, right: 100, bottom: 20, left: 100}}
+                padding={{top: 0, right: 70, bottom: 0, left: 70}}
                 colorScale={["tomato", "navy", "green" ]} 
                 data={[
                     { x: (props.fixed > 0) ? "Fixed" : null, y: ((props.fixed / props.revenue) * 100)},
@@ -18,7 +18,6 @@ const PieChart = props => (
                 ]}
             />
         </Col>
-    </Row>
 )
 
 export default PieChart;
