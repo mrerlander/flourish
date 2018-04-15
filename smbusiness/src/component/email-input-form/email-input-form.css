@@ -1,0 +1,23 @@
+#emailInput {
+    position: fixed;
+    top: 10%;
+    left: 45%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:black;
+}
+
+/* #emailSubmitButton {
+    float: right;
+} */
+
+/* #emailSubmitButton {
+    /* display:block;
+    text-align: center; */
+    /* position: relative;
+    right: 0; 
+    bottom: 0; */
+    /* padding-bottom: 0; */
+
+/* } */ 

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#landingHeader {
+    position: fixed;
+    top: 5%;
+    left: 44%;
+}
+
+#headerValueStatement {
+    position: fixed;
+    top: 15%;
+    left: 10%;
+}
