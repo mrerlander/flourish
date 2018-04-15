@@ -1,16 +1,21 @@
 import React from 'react';
-import {Input} from 'react-materialize';
+import {Input, Col} from 'react-materialize';
 
 const GoalForm = props => (
-    <form>
-    <Input 
-        onChange={props.handleInputChange}
-        name="goalAmount"
-        placeholder="$"
-        s={12} 
-        label="Goal $ amount"
-    />
-    </form>
+        <form>
+            <Col
+                s={12}
+                l={6}
+            >
+                <Input 
+                    onChange={props.handleInputChange}
+                    name="goalAmount"
+                    placeholder="$"
+                    s={12} 
+                    label="Goal $ amount"
+                />
+            </Col>
+        </form>
 )
 
 export default GoalForm;

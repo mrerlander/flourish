@@ -5,6 +5,7 @@ import Footer from '../component/footer';
 import PieChart from '../component/pieChart';
 import GoalForm from '../component/goalForm';
 import {Row} from 'react-materialize';
+import GoalSlider from '../component/slider';
 
 class Demo extends Component {
 
@@ -16,7 +17,7 @@ class Demo extends Component {
             variable: 0,
             revenue: 0,
             goalType: null,
-            goalAmount: 0
+            goalAmount: 0,
         }
     };
 
@@ -71,10 +72,14 @@ class Demo extends Component {
                 />
                 </Row>
                 {(this.state.goal > 0) && 
+                    <Row>
                     <GoalForm
                     goalType={this.state.goalType}
                     handleInputChange={this.handleInputChange}
-                />}
+                    slider={this.state.slider}
+                />
+                <GoalSlider />
+                </Row>}
                 <Footer />
             </div>
         )
