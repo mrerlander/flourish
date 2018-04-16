@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Button, Row } from 'react-materialize';
-// import './email-input-form.css';
+import './contact-us-form.css';
 
 const ContactUsForm = props => (
     <div>
@@ -9,29 +9,29 @@ const ContactUsForm = props => (
         <form id="ContactUsForm" onSubmit={props.handleSubmit}>
                 <Input s={12}
                 name="first_name"
-                onChange={props.handleInputChange}
-                placeholder="First Name"
+                // onChange={props.handleInputChange}
+                label="First Name"
             />
                 <Input s={12}
                 name="last_name"
-                onChange={props.handleInputChange}
-                placeholder="Last Name"
+                // onChange={props.handleInputChange}
+                label="Last Name"
             />
                 <Input s={12}
                 name="company_name"
-                onChange={props.handleInputChange}
-                placeholder="Company Name"
+                // onChange={props.handleInputChange}
+                label="Company Name"
             />
             <Input s={12}
                 name="email"
-                onChange={props.handleInputChange}
-                placeholder="Email Address"
+                // onChange={props.handleInputChange}
+                label="Email Address"
             />
             <Input s={12}
                 name="message"
                 type="textarea"
-                onChange={props.handleInputChange}
-                placeholder="Message"
+                // onChange={props.handleInputChange}
+                label="Message"
             />
             <Button
                 type="submit"
