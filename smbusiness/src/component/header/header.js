@@ -7,7 +7,7 @@ const Header = () => (
     <Navbar className='teal darken-4' brand='Flourish' right>
         <NavItem href='/about'>About</NavItem>
         <NavItem href='/howitworks'>How it Works</NavItem>
-        <NavItem href='#'>Contact Us</NavItem>
+        <NavItem href='contactus'>Contact Us</NavItem>
     </Navbar>
 );
 

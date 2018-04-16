@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Header from '../component/header';
-import EmailInputForm from '../component/email-input-form';
 import Footer from '../component/footer';
-import './landing.css';
+import {Col, Row, CardPanel} from 'react-materialize';
+import ContactUsForm from '../component/contact-us-form';
 
 class ContactUs extends Component {
 
@@ -17,41 +17,52 @@ class ContactUs extends Component {
         }
     };
 
-    handleInputChange = (event) => {
-        const value = event.target.value;
-        const name = event.target.name
-        this.setState({ [name]: value });
-      };
+    // handleInputChange = (event) => {
+    //     const value = event.target.value;
+    //     const name = event.target.name
+    //     this.setState({ [name]: value });
+    // };
 
-      handleSubmit = (event) => {
-          event.preventDefault();
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
 
-        const userEmail = event.target.firstElementChild.firstElementChild.value;
-        debugger;
-        fetch("/savedemails", {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ userEmail : userEmail })
-        })
-          .then(res => res.json())
-          .then(res => {
-            console.log(res);
-            // return this.setState({email: [...res]})
-          });    
-        };
+    //     const first_name = event.target.firstElementChild.firstElementChild.value;
+    //     const last_name = event.target.firstElementChild.firstElementChild.value;
+    //     const company_name = event.target.firstElementChild.firstElementChild.value;
+    //     const email = event.target.firstElementChild.firstElementChild.value;
+    //     const message = event.target.firstElementChild.firstElementChild.value;
+
+    //     debugger;
+    //     fetch("/contactusmessages", {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ first_name: first_name, last_name: last_name, company_name: company_name, email: email, message: message })
+    //     })
+    //         .then(res => res.json())
+    //         .then(res => {
+    //             console.log(res);
+    //             // return this.setState({email: [...res]})
+    //         });
+    // };
 
     render() {
         return (
             <div>
-            <Header />
-      
-            <Footer />
+                <Header />
+                <Row>
+                <Col s={6} offset="s3">
+                <CardPanel>
+            <ContactUsForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
+                </CardPanel>
+                </Col>
+                </Row>
+                <Footer />
             </div>
         )
     };
 };
 
-export default Landing;
+export default ContactUs;

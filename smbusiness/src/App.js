@@ -5,6 +5,7 @@ import Landing from './pages/landing';
 import About from './pages/about';
 import './App.css';
 import HowItWorks from './pages/howItWorks';
+import ContactUs from './pages/contact-us';
 
 const App = () => (
     <Router>
@@ -24,6 +25,10 @@ const App = () => (
         <Route
           exact path='/demo'
           component={Demo}
+        />
+        <Route
+          exact path='/contactus'
+          component={ContactUs}
         />
       </div>
     </Router>

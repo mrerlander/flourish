@@ -52,6 +52,7 @@ class About extends Component {
             <CardPanel>
             <h4>Meet The Team</h4>
             <h5>Michael Erlander (CTO / Co-Founder)</h5>
+            <img src={require('../images/michael.png')} alt="mike" id="mikeImage"></img>
             <p>Michael Erlander is the co-founder and CTO of Flourish. 
                 Prior to Flourish, Michael was CEO of Grand Central Communications, an internet service for business-to-businessnintegration. 
                 Before joining Grand Central, Craig was a senior vice president at Excite@Home where henoversaw the Excite Search and Community business units and managed Network Programming. 
