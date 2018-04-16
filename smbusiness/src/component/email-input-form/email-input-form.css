@@ -8,11 +8,7 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-<<<<<<< HEAD
-    color: black;
-=======
     color:black;
->>>>>>> 09bd5adcfc205b871f305dfe9eafc6deee27bccb
 }
 
 /* #emailSubmitButton {
