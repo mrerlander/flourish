@@ -1,9 +1,9 @@
 import React from 'react';
-import { Input, Button } from 'react-materialize';
+import { Input, Button, Row } from 'react-materialize';
 import './email-input-form.css';
 
 const EmailInputForm = props => (
-
+<Row>
         <form id="emailInput" onSubmit={props.handleSubmit}>
             <Input
                 name="email"
@@ -15,11 +15,12 @@ const EmailInputForm = props => (
                 type="submit"
                 waves="light"
                 id="emailSubmitButton"
-                className="right"
+                className="left"
             >
                 Get Early Access
         </Button>
         </form>
+        </Row>
 );
 
 export default EmailInputForm;
