@@ -4,6 +4,7 @@ import Demo from './pages/demo';
 import Landing from './pages/landing';
 import About from './pages/about';
 import './App.css';
+import HowItWorks from './pages/howItWorks';
 
 const App = () => (
     <Router>
@@ -15,6 +16,10 @@ const App = () => (
         <Route
           exact path='/about'
           component={About}
+        />
+        <Route
+          exact path='/howitworks'
+          component={HowItWorks}
         />
         <Route
           exact path='/demo'
