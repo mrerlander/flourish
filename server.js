@@ -1,8 +1,16 @@
 // Dependencies
+
+require('dotenv').config();
+
 var express = require("express");
 var mongojs = require("mongojs");
 var logger = require("morgan");
 var bodyParser = require('body-parser');
+
+//For SendGrid NPM Package
+var sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+console.log(process.env.SENDGRID_API_KEY);
 
 var PORT = process.env.PORT || 3001;
 var app = express();
@@ -38,22 +46,19 @@ db.on("error", function(error) {
     next();
   });
 
-//route to add an email
-app.post('/emailinsert', function(req, res){
-
-	db.users.insert(req.body, function(error, userEmail) {
-	  // Log any errors
-	  if (error) {
-	    res.send(error);
-	  }else {
-	    res.json(userEmail);
-	  }
-	});
-});
-
 //Route to post user emails
 app.post('/savedemails', function (req, res) {
-    console.log(req.body);
+  // console.log(req.body.userEmail);
+  var msg = {
+    to: req.body.userEmail,
+    from: 'info@flourish.com',
+    subject: 'Thanks for Signing Up!',
+    text: 'and easy to do anywhere, even with Node.js',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+  };
+  sgMail.send(msg);
+
+    // console.log(req.body);
     db.users.insert(req.body, function (error, savedEmail) {
         // Log any errors
         if (error) {

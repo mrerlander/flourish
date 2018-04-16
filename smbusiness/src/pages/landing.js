@@ -23,7 +23,7 @@ class Landing extends Component {
           event.preventDefault();
 
         const userEmail = event.target.firstElementChild.firstElementChild.value;
-        debugger;
+        // debugger;
         fetch("/savedemails", {
           method: 'POST',
           headers: {
