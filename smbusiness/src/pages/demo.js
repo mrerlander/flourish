@@ -4,7 +4,7 @@ import Form from '../component/form';
 import Footer from '../component/footer';
 import PieChart from '../component/pieChart';
 import GoalForm from '../component/goalForm';
-import {Row} from 'react-materialize';
+import {Row, Col, CardPanel} from 'react-materialize';
 import GoalSlider from '../component/slider';
 import './demo.css';
 
@@ -62,7 +62,10 @@ class Demo extends Component {
         return (
             <div>
                 <Header />
-                <div id="how-it-works">
+                <div className="container">
+                <Row id="how-it-works">
+                <Col s={12}>
+                <CardPanel>
                 <h4>How it Works</h4>
                 <h5>1. Connect your business' bank account</h5>
                 <p>To use Flourish, you need to connect your business' checking account. This allows Flourish to analyze your business' income and spending, and find money it can safely set aside for your business based on your cash flow.
@@ -74,14 +77,20 @@ class Demo extends Component {
                     <p>We know you're saving for good reasons – a new location, a new employee, new equipment or even just a rainy day. When you need your savings, send Flourish a text message. Flourish will transfer the money from your Flourish savings back to your business' checking account next business day.</p>
 
                     <p>Flourish allows unlimited transfers and has no account minimums.</p>
-                </div>
-                <div>
+                </CardPanel>
+                </Col>
+                </Row>
+                <br />
+                <br />
+                <br />
+                <br />
                 <Row>
                 <Form 
                     handleInputChange={this.handleInputChange}
                     handleGoal={this.handleGoal}
                 />
                 <PieChart 
+                    className="right"
                     fixed={this.state.fixed}
                     variable={this.state.variable}
                     revenue={this.state.revenue}
@@ -96,8 +105,8 @@ class Demo extends Component {
                 />
                 <GoalSlider />
                 </Row>}
-                <Footer />
                 </div>
+                <Footer />
             </div>
         )
     };
