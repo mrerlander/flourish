@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from '../component/header';
 import EmailInputForm from '../component/email-input-form';
 import './landing.css';
-import {Row, Col} from "react-materialize";
+import {Row, Col, CardPanel} from "react-materialize";
 
 class Landing extends Component {
 
@@ -44,6 +44,7 @@ class Landing extends Component {
             <div>
             <Header />
             <br/>
+            <CardPanel id="emailInputPanel">
             <Row>
                 <Col s={12} className="center">
             <img src={require('../images/rain.png')} alt="logo" id="landingLogo"></img>
@@ -58,7 +59,8 @@ class Landing extends Component {
             <Col s={4} offset="s4" className="center">
             <EmailInputForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
             </Col>
-            </Row>            
+            </Row> 
+            </CardPanel>           
     </div>
         )
     };
