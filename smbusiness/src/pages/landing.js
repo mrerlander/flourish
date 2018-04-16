@@ -43,20 +43,20 @@ class Landing extends Component {
         return (
             <div>
             <Header />
-            <Row>
-                <Col s={12}>
-            <img src={require('../images/rain.png')} alt="logo" id="landingLogo"></img>
-            </Col>
-            </Row>
             <br/>
             <Row>
-            <Col s={12}>
-            <EmailInputForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
+                <Col s={12} className="center">
+            <img src={require('../images/rain.png')} alt="logo" id="landingLogo"></img>
             </Col>
             </Row>
             <Row>
             <Col s={12}>
             <h3 id="headerValueStatement">The world's first free automated savings app designed for small businesses.</h3>
+            </Col>
+            </Row>
+            <Row>
+            <Col s={4} offset="s4" className="center">
+            <EmailInputForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
             </Col>
             </Row>            
     </div>

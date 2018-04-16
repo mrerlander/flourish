@@ -81,6 +81,7 @@ class Demo extends Component {
         return (
             <div>
                 <Header />
+                <div id="wrapper">
                 <Row>
                 <Form 
                     handleInputChange={this.handleInputChange}
@@ -107,6 +108,7 @@ class Demo extends Component {
                 />
                 </Row>}
                 <LineGraph />
+                </div>
                 <Footer />
             </div>
         )

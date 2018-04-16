@@ -5,10 +5,10 @@
 }
 
 #landingLogo {
-    position: fixed;
+    /* position: fixed;
     top: 8%;
     left: 48%;
-    opacity: 0.5;
+    opacity: 0.5; */
     height: 64px;
     width: 64px;
 }
