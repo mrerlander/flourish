@@ -6,6 +6,7 @@ import PieChart from '../component/pieChart';
 import GoalForm from '../component/goalForm';
 import {Row} from 'react-materialize';
 import GoalSlider from '../component/slider';
+import LineGraph from '../component/lineGraph';
 import './demo.css';
 
 
@@ -20,6 +21,8 @@ class Demo extends Component {
             revenue: 0,
             goalType: null,
             goalAmount: 0,
+            monthlyGoal: 0,
+            percent: false
         }
     };
 
@@ -37,25 +40,41 @@ class Demo extends Component {
 
         switch (event.target.textContent){
             case "Rainy day fund":
-            this.setState({goal: 1});
+            this.setState({goalType: 1, percent: true});
             break;
 
             case "Purchase new equipment":
-            this.setState({goal: 2})
+            this.setState({goalType: 2, percent: false})
             break;
 
             case "Open a new location":
-            this.setState({goal: 3})
+            this.setState({goalType: 3, percent: false})
             break;
 
             case "Other":
-            this.setState({goal: 1})
+            this.setState({goalType: 1, percent: true})
             break;
 
             default:
-            this.setState({goal: 1})
+            this.setState({goalType: 1, percent: true})
             break;
         }      
+    }
+
+    sliderComplete = (value, type) => {
+
+        const profit = this.state.revenue - this.state.fixed - this.state.variable;
+
+        if (type === 'days'){
+
+        const monthlyGoal = (profit / value) * 30;
+        this.setState({monthlyGoal: Number(monthlyGoal)});
+
+        } else {
+            const monthlyGoal = (profit * (value / 100));
+            this.setState({monthlyGoal: Number(monthlyGoal)});
+            this.setState({percent: true});
+        }
     }
 
     render(){
@@ -72,17 +91,22 @@ class Demo extends Component {
                     fixed={this.state.fixed}
                     variable={this.state.variable}
                     revenue={this.state.revenue}
+                    monthlyGoal={this.state.monthlyGoal}
                 />
                 </Row>
-                {(this.state.goal > 0) && 
+                {(this.state.goalType > 0) && 
                     <Row>
                     <GoalForm
-                    goalType={this.state.goalType}
+                    percent={this.state.percent}
+                    monthlyGoal={this.state.monthlyGoal}
                     handleInputChange={this.handleInputChange}
-                    slider={this.state.slider}
                 />
-                <GoalSlider />
+                <GoalSlider 
+                sliderComplete={this.sliderComplete}
+                goalType={this.state.goalType}
+                />
                 </Row>}
+                <LineGraph />
                 <Footer />
             </div>
         )

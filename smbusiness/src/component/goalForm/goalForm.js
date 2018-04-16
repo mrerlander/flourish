@@ -13,6 +13,7 @@ const GoalForm = props => (
                     placeholder="$"
                     s={12} 
                     label="Goal $ amount"
+                    value={(props.percent) ? props.monthlyGoal : null}
                 />
             </Col>
         </form>

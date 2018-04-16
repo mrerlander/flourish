@@ -9,12 +9,13 @@ const PieChart = props => (
             offset='s1 l1'
         >
             <VictoryPie
-                padding={{top: 0, right: 70, bottom: 0, left: 70}}
-                colorScale={["tomato", "navy", "green" ]} 
+                padding={{top: 0, right: 100, bottom: 0, left: 100}}
+                colorScale={["tomato", "navy", "green", "yellow" ]} 
                 data={[
-                    { x: (props.fixed > 0) ? "Fixed" : null, y: ((props.fixed / props.revenue) * 100)},
-                    { x: (props.variable > 0) ? "Variable" : null, y: ((props.variable / props.revenue) * 100)},
-                    { x: (props.revenue > 0) ? "Profit" : null, y: (((props.revenue - props.fixed - props.variable) / props.revenue) * 100)}
+                    { x: (props.fixed > 0) ? `Fixed: $${props.fixed}` : null, y: ((props.fixed / props.revenue) * 100)},
+                    { x: (props.variable > 0) ? `Variable: $${props.variable}` : null, y: ((props.variable / props.revenue) * 100)},
+                    { x: (props.revenue > 0) ? `Profit: $${(props.revenue - props.fixed - props.variable - props.monthlyGoal)}` : null, y: (((props.revenue - props.fixed - props.variable - props.monthlyGoal) / props.revenue) * 100)},
+                    { x: (props.monthlyGoal > 0) ? `Goal: $${props.monthlyGoal}` : null, y: ((props.monthlyGoal / props.revenue) * 100)}
                 ]}
             />
         </Col>
