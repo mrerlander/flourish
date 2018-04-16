@@ -4,23 +4,27 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-#landingHeader {
-    position: absolute;
-    top: 10%;
-    left: 44%;
-}
-
-#headerValueStatement {
-    position: absolute;
-    top: 17%;
-    left: 4%;
-}
-
 #landingLogo {
-    position: absolute;
+    position: fixed;
     top: 8%;
     left: 48%;
     opacity: 0.5;
-    height: 100px;
-    width: 100px;
+    height: 64px;
+    width: 64px;
+}
+
+html {
+    background: url("https://images.unsplash.com/photo-1502228213426-d4e9f2add0e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=85732fd87ba1c3771852abc666633901&auto=format&fit=crop&w=2250&q=80") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#headerValueStatement {
+    /* position: fixed; */
+    /* top: 12%;
+    left: 15%; */
+    text-align: center;
+    font-size: 2vw;
 }

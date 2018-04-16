@@ -15,7 +15,7 @@ app.use(bodyParser());
 
 // Database configuration
 var databaseUrl = process.env.MONGODB_URI || "flourish_db";
-var collections = ["users"];
+var collections = ["users", "contactUsMessages"];
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl , collections);
@@ -73,6 +73,43 @@ app.get('/savedemails', function (req, res) {
     }, function (error, result) {
         res.json(result);
     });
+});
+
+//route to add a new contact us message
+app.post('/contactusmessageinsert', function(req, res){
+	// {name: 'to kill a mockingbird'} 
+
+	db.contactUsMessages.insert(req.body, function(error, userEmail) {
+	  // Log any errors
+	  if (error) {
+	    res.send(error);
+	  }else {
+	    res.json(userEmail);
+	  }
+	});
+});
+
+//Route to post contact us messages
+app.post('/contactusmessages', function (req, res) {
+  console.log(req.body);
+  db.users.insert(req.body, function (error, savedEmail) {
+      // Log any errors
+      if (error) {
+          res.send(error);
+      } else {
+          res.json(savedEmail);
+      }
+  });
+});
+
+//Route to get all contact us messages
+
+app.get('/contactusmessages', function (req, res) {
+  // res.send('hi');
+  db.users.find({
+  }, function (error, result) {
+      res.json(result);
+  });
 });
 
 // Listen on port 3001

@@ -8,8 +8,9 @@ const EmailInputForm = props => (
             <Input
                 name="email"
                 onChange={props.handleInputChange}
-                placeholder="Enter your email address..."
+                placeholder="Enter your email..."
             />
+            <br/>
             <Button
                 type="submit"
                 waves="light"
