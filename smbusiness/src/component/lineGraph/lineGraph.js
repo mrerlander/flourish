@@ -1,27 +1,31 @@
 import React from 'react';
-import {Col} from 'react-materialize';
 import {VictoryChart, VictoryLine} from 'victory';
 
 const LineGraph = props => (
 
-<Col s={12}>
 <VictoryChart>
 <VictoryLine
-  padding={100}
   style={{
     data: { stroke: "#c43a31" },
-    parent: { border: "1px solid #ccc"}
+    parent: { border: "1px solid #ccc"},
   }}
   data={[
-    { x: 1, y: 2 },
-    { x: 2, y: 3 },
-    { x: 3, y: 5 },
-    { x: 4, y: 4 },
-    { x: 5, y: 7 }
+    { x: 0, y: 0 },  
+    { x: 1, y: (props.monthlyGoal) },
+    { x: 2, y: (props.monthlyGoal * 2) },
+    { x: 3, y: (props.monthlyGoal * 3) },
+    { x: 4, y: (props.monthlyGoal * 4) },
+    { x: 5, y: (props.monthlyGoal * 5) },
+    { x: 6, y: (props.monthlyGoal * 6) },
+    { x: 7, y: (props.monthlyGoal * 7) },
+    { x: 8, y: (props.monthlyGoal * 8) },
+    { x: 9, y: (props.monthlyGoal * 9) },
+    { x: 10, y: (props.monthlyGoal * 10) },
+    { x: 11, y: (props.monthlyGoal * 11) },
+    { x: 12, y: (props.monthlyGoal * 12) }
   ]}
 />
 </VictoryChart>
-</Col>
 
 )
 

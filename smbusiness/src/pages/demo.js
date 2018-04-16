@@ -4,7 +4,7 @@ import Form from '../component/form';
 import Footer from '../component/footer';
 import PieChart from '../component/pieChart';
 import GoalForm from '../component/goalForm';
-import {Row} from 'react-materialize';
+import {Row, Col} from 'react-materialize';
 import GoalSlider from '../component/slider';
 import LineGraph from '../component/lineGraph';
 import './demo.css';
@@ -68,11 +68,11 @@ class Demo extends Component {
         if (type === 'days'){
 
         const monthlyGoal = (profit / value) * 30;
-        this.setState({monthlyGoal: Number(monthlyGoal)});
+        this.setState({monthlyGoal: parseInt(monthlyGoal, 10)});
 
         } else {
             const monthlyGoal = (profit * (value / 100));
-            this.setState({monthlyGoal: Number(monthlyGoal)});
+            this.setState({monthlyGoal: parseInt(monthlyGoal, 10)});
             this.setState({percent: true});
         }
     }
@@ -107,9 +107,15 @@ class Demo extends Component {
                 goalType={this.state.goalType}
                 />
                 </Row>}
-                <LineGraph />
-                </div>
+                <Row>
+                <Col s={6}
+                    offset="s3"
+                >
+                {(this.state.monthlyGoal > 0) && <LineGraph monthlyGoal={this.state.monthlyGoal}/>}
+                </Col>
+                </Row>
                 <Footer />
+                </div>
             </div>
         )
     };
