@@ -17,36 +17,43 @@ class ContactUs extends Component {
         }
     };
 
-    // handleInputChange = (event) => {
-    //     const value = event.target.value;
-    //     const name = event.target.name
-    //     this.setState({ [name]: value });
-    // };
+    handleInputChange = (event) => {
+        const value = event.target.value;
+        const name = event.target.name
+        this.setState({ [name]: value });
+    };
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
+        
+        const first_name = event.target.children[0].firstElementChild.value;
+        const last_name = event.target.children[1].firstElementChild.value;
+        const company_name = event.target.children[2].firstElementChild.value;
+        const email = event.target.children[3].firstElementChild.value;
+        const message = event.target.children[4].firstElementChild.value;
+        event.target.reset();
 
-    //     const first_name = event.target.firstElementChild.firstElementChild.value;
-    //     const last_name = event.target.firstElementChild.firstElementChild.value;
-    //     const company_name = event.target.firstElementChild.firstElementChild.value;
-    //     const email = event.target.firstElementChild.firstElementChild.value;
-    //     const message = event.target.firstElementChild.firstElementChild.value;
+        debugger;
+        fetch("/contactusmessages", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ first_name: first_name, last_name: last_name, company_name: company_name, email: email, message: message })
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                // document.getElementById("ContactUsForm").reset();
+                // return this.setState({email: [...res]})
+            });
 
-    //     debugger;
-    //     fetch("/contactusmessages", {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ first_name: first_name, last_name: last_name, company_name: company_name, email: email, message: message })
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             console.log(res);
-    //             // return this.setState({email: [...res]})
-    //         });
-    // };
+        
+            // document.getElementById("ContactUsForm").reset();
+
+        // event.target.lastElementChild.setAttribute("disabled", "disabled");    
+    };
 
     render() {
         return (

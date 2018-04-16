@@ -15,7 +15,7 @@ app.use(bodyParser());
 
 // Database configuration
 var databaseUrl = process.env.MONGODB_URI || "flourish_db";
-var collections = ["users", "contactUsMessages"];
+var collections = ["users", "messages"];
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl , collections);
@@ -38,9 +38,8 @@ db.on("error", function(error) {
     next();
   });
 
-//route to add a book
+//route to add an email
 app.post('/emailinsert', function(req, res){
-	// {name: 'to kill a mockingbird'} 
 
 	db.users.insert(req.body, function(error, userEmail) {
 	  // Log any errors
@@ -75,29 +74,15 @@ app.get('/savedemails', function (req, res) {
     });
 });
 
-//route to add a new contact us message
-app.post('/contactusmessageinsert', function(req, res){
-	// {name: 'to kill a mockingbird'} 
-
-	db.contactUsMessages.insert(req.body, function(error, userEmail) {
-	  // Log any errors
-	  if (error) {
-	    res.send(error);
-	  }else {
-	    res.json(userEmail);
-	  }
-	});
-});
-
 //Route to post contact us messages
 app.post('/contactusmessages', function (req, res) {
   console.log(req.body);
-  db.users.insert(req.body, function (error, savedEmail) {
+  db.messages.insert(req.body, function (error, message) {
       // Log any errors
       if (error) {
           res.send(error);
       } else {
-          res.json(savedEmail);
+          res.json(message);
       }
   });
 });
@@ -106,7 +91,7 @@ app.post('/contactusmessages', function (req, res) {
 
 app.get('/contactusmessages', function (req, res) {
   // res.send('hi');
-  db.users.find({
+  db.messages.find({
   }, function (error, result) {
       res.json(result);
   });
