@@ -109,7 +109,7 @@ class Demo extends Component {
                 <Col s={6}
                     offset="s3"
                 >
-                {(this.state.monthlyGoal > 0) && <LineGraph monthlyGoal={this.state.monthlyGoal}/>}
+                {(this.state.monthlyGoal > 0 && this.state.goalType === 1) && <LineGraph monthlyGoal={this.state.monthlyGoal}/>}
                 </Col>
                 </Row>}
 
