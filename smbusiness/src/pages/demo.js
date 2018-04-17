@@ -67,7 +67,7 @@ class Demo extends Component {
 
         if (type === 'days'){
 
-        const monthlyGoal = (profit / value) * 30;
+        const monthlyGoal = (this.state.goalAmount / value) * 30;
         this.setState({monthlyGoal: parseInt(monthlyGoal, 10)});
 
         } else {
