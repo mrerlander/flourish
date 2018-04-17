@@ -6,6 +6,7 @@ var express = require("express");
 var mongojs = require("mongojs");
 var logger = require("morgan");
 var bodyParser = require('body-parser');
+var path = require('path');
 
 //For SendGrid NPM Package
 var sgMail = require('@sendgrid/mail');
@@ -33,11 +34,9 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
-/*
-  if we don't do this here then we'll get this error in apps that use this api
-  Fetch API cannot load No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-  read up on CORs here: https://www.maxcdn.com/one/visual-glossary/cors/
-*/
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('smbusiness/build'));
+}
   //allow the api to be accessed by other apps
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -99,6 +98,10 @@ app.get('/contactusmessages', function (req, res) {
   }, function (error, result) {
       res.json(result);
   });
+});
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './smbusiness/public/index.html'));
 });
 
 // Listen on port 3001
