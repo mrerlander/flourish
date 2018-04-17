@@ -46,7 +46,7 @@ class About extends Component {
             <div id="about-us-content">
             <CardPanel>
             <h4>About Us</h4>
-            <p>Our mission is simple. We're here to help you succeed by helping you meet and exceed your businesses financial goals.</p>
+            <p>Our mission is simple. We're here to help you succeed by helping you meet and exceed your business' financial goals.</p>
             <p>We recognize that all small businesses have unique challenges and and are working on building a platform that will allow you to automatically save money on your terms.</p>
             </CardPanel>
             <CardPanel>
