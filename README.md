@@ -4,7 +4,7 @@ Link to Site: https://tryflourish.herokuapp.com/
 
 About: Flourish is the world's first automated savings app designed specifically for small businesses.
 
-![alt "Flourish App"](flourish/public/images/flourish.png)
+![alt "Flourish App"](flourish/public/images/newflourish.png)
 
 Description: We envision building a platform to allow small businesses to meet and exceed their financial goals by allowing them to automatically save money on their own terms.
 
