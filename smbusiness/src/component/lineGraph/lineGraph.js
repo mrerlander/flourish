@@ -3,7 +3,7 @@ import {VictoryChart, VictoryLine} from 'victory';
 
 const LineGraph = props => (
 
-<VictoryChart>
+<VictoryChart style={{'position': 'relative', 'top': 0}}>
 <VictoryLine
   style={{
     data: { stroke: "#c43a31" },

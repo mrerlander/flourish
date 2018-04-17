@@ -106,14 +106,13 @@ class Demo extends Component {
                 sliderComplete={this.sliderComplete}
                 goalType={this.state.goalType}
                 />
-                </Row>}
-                <Row>
                 <Col s={6}
                     offset="s3"
                 >
                 {(this.state.monthlyGoal > 0) && <LineGraph monthlyGoal={this.state.monthlyGoal}/>}
                 </Col>
-                </Row>
+                </Row>}
+
                 <Footer />
                 </div>
             </div>

@@ -41,6 +41,7 @@ class GoalSlider extends Component {
             className='slider'
             s={12}
             l={6}
+            style={{'max-height': '79px'}}
         >{(this.props.goalType === 1) ? <Slider
             min={0}
             max={10}
