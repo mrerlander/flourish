@@ -52,9 +52,8 @@ app.post('/savedemails', function (req, res) {
   var msg = {
     to: req.body.userEmail,
     from: 'info@flourish.com',
-    subject: 'Thanks for Signing Up!',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    subject: 'Welcome to Flourish!',
+    html: '<p>What took you so long?</p>' + '<p>In all seriousness, we\'re so glad you made it.</p>' + '<p>We hope you\'re excited to start this jouney with us and promise that we\'ll keep you updated along the way.</p>' + '<p>If you\'re curious to learn more about how Flourish can help your business meet and exceed your goals, click on the link below:</p>' + '<button style="background:Gainsboro"><a href="https://www.google.com">How Can Flourish Benefit Your Business?</button>' + '<p>Thanks again for signing up and welcome aboard!</p>' + '<p>Cheers,</p>' + '<p>Peter & Michael</p>',
   };
   sgMail.send(msg);
 
