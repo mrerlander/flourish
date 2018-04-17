@@ -61,7 +61,7 @@ class About extends Component {
                 <h5>Michael Erlander (CTO / Co-Founder)</h5>
             <img src={require('../images/michael.png')} alt="mike" id="mikeImage"></img>
             <p>Michael Erlander is the co-founder and CTO of Flourish. 
-                Prior to Flourish, Michael was a sales solutions and analytics specialist at Northstar Lottery Group, the private manager of the Illinois Lottery, working with the analytics and sales teams to create sales goals, implement routing strategies, and administer their salesforce automation tools. Michael recently copmleted the Full-Stack Web Development Bootcamp at Northwestern University. </p>
+                Prior to Flourish, Michael was a sales solutions and analytics specialist at Northstar Lottery Group, the private manager of the Illinois Lottery, working with the analytics and sales teams to create sales goals, implement routing strategies, and administer their salesforce automation tools. Michael recently completed the Full-Stack Web Development Bootcamp at Northwestern University. </p>
                 </CardPanel>
                 <CardPanel>
                 <h4>Our Investors</h4>
