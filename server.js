@@ -35,7 +35,7 @@ db.on("error", function(error) {
 });
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('smbusiness/build'));
+  app.use(express.static('flourish/build'));
 }
   //allow the api to be accessed by other apps
   app.use(function(req, res, next) {
@@ -101,7 +101,7 @@ app.get('/contactusmessages', function (req, res) {
 });
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './smbusiness/public/index.html'));
+  res.sendFile(path.join(__dirname, './flourish/public/index.html'));
 });
 
 // Listen on port 3001
