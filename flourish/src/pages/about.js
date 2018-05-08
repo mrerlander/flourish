@@ -23,7 +23,7 @@ class About extends Component {
           event.preventDefault();
 
         const userEmail = event.target.firstElementChild.firstElementChild.value;
-        debugger;
+        
         fetch("/savedemails", {
           method: 'POST',
           headers: {
