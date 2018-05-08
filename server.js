@@ -101,7 +101,7 @@ app.get('/contactusmessages', function (req, res) {
 });
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './flourish/public/index.html'));
+  res.sendFile(path.join(__dirname, './flourish/build/index.html'));
 });
 
 // Listen on port 3001

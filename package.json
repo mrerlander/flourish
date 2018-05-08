@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrerlander/untitled-small-business.git"
+    "url": "git+https://github.com/mrerlander/flourish.git"
   },
   "author": "Michael Erlander, Peter Gustafson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrerlander/untitled-small-business/issues"
+    "url": "https://github.com/mrerlander/flourish/issues"
   },
-  "homepage": "https://github.com/mrerlander/untitled-small-business#readme",
+  "homepage": "https://github.com/mrerlander/flourish#readme",
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
     "body-parser": "^1.18.2",
