@@ -100,9 +100,9 @@ app.get('/contactusmessages', function (req, res) {
   });
 });
 
-// app.get('*', function (req, res) {
-//   res.sendFile(path.join(__dirname, './flourish/public/index.html'));
-//});
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './flourish/public/index.html'));
+});
 
 // Listen on port 3001
   app.listen(PORT, function() {
